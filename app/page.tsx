@@ -3,6 +3,7 @@ import { UserButton, auth } from "@clerk/nextjs";
 import Link  from "next/link";
 import Image from "next/image";
 import { LogIn } from "lucide-react";
+import FileUpload from "@/components/ui/FileUpload";
 
 export default async function Home() {
   const {userId} = await auth();
@@ -28,7 +29,7 @@ export default async function Home() {
             Joins millions of students, researchers and professionals to instantly answer questions and understand research with AI
           </p>
           <div className="w-full mt-4">
-            {isAuth ? (<h1>fileupload</h1>):(
+            {isAuth ? (<FileUpload/>):(
               <Link href="/sign-in">
                 <Button className="rounded-full">Login to get Started
                 <LogIn className="w-4 h-4 ml-2" />
